@@ -1,0 +1,23 @@
+Font: Custom, Bella, Times New Roman, Helvetica, Shelley, FF
+Fontstyle: Normal, Italic, Bold, Bold italic
+Size: 1, 4000, 55
+Colour: red, green, yellow, custom, 0, 50, 255, FEFEFO, hls
+Underline: none, present
+Underline color: red, green, yellow, custom, 0, 50, 255, FEFEFO, hls, notused
+Strikethrough: normal, double, none
+Script: superscript, subscript, none
+Offset: -100, -35, -1, 1, 0, 45, 100
+Caps: smallcaps, allcaps, none
+Height: on, off
+
+IF [Underline] = "none"
+THEN [Underline color] = "notused";
+
+IF [Script] = "superscript"
+THEN [Offset] >0;
+
+IF [Script] = "subscript"
+THEN [Offset] <0;
+
+IF [Script] = "none"
+THEN [Offset] = 0;
